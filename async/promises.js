@@ -22,6 +22,7 @@ function hablar(nombre){
         setTimeout(function(){
             console.log('Bla bla bla bla ...')
             resolve(nombre)
+            reject('Hay un error')
         })
     })
 
@@ -33,4 +34,8 @@ hola('Carlos')
     .then(adios)
     .then((nombre) => {
         console.log('Terminado el proceso')
+    })
+    .catch(error =>{
+        console.error('Ha habido un error')
+        console.error(error)
     })
